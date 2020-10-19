@@ -1,0 +1,91 @@
+﻿@page "{id:int}"
+@model OptionsTracker.Pages.Trades.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Trade</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Trade.Market)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Trade.Market)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Trade.ContractMonth)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Trade.ContractMonth)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Trade.ContractType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Trade.ContractType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Trade.StrikePrice)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Trade.StrikePrice)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Trade.ExpirationDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Trade.ExpirationDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Trade.EntryDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Trade.EntryDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Trade.NbrOfContracts)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Trade.NbrOfContracts)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Trade.EntryPrice)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Trade.EntryPrice)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Trade.CurrentPrice)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Trade.CurrentPrice)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Trade.CommissionFees)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Trade.CommissionFees)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Trade.ExitDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Trade.ExitDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Trade.ExitPrice)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Trade.ExitPrice)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Trade.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

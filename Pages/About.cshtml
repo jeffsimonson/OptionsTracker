@@ -1,0 +1,30 @@
+﻿@page
+@*@model PrivacyModel*@
+
+
+@{
+    ViewData["Title"] = "About OptionsTracker";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    OptionsTracker is a simple application for managing a portfolio of commodity/futures options trades. Adding a new trade
+    entails entering a market symbol, contract month code, option type (e.g. Call or Put), strike price, expiration date, entry date, entry price, current price,
+    and commission. The app will automatically retrieve the point value associated with the market symbol and will use that
+    to compute the trade value and net profit or loss. The app will also compute the days until expiration and the portfolio
+    totals for the trade value and profit/loss.
+</p>
+<p>
+    OptionsTracker was built using the ASP.NET Core project template for a Web Application with Razor pages. The app's main trade
+    model class uses Entity Framework Core (EF Core) to interact with the app's MS SQL database. 
+</p>
+<p>
+    The primary purpose of this project is to demonstrate basic "CRUD" actions with the database as well as some more complicated
+    SQL queries with the help of LINQ. Since that is the primary focus, a more minimalist approach was taken for the initial styling
+    of the application and was not developed for real world purposes beyond that of a single user with no security built in.
+</p>
+<p>
+    Planned enhancements include login/authentication, a user-profile setup, automatic retrieval the current price from an on-line
+    source, and a historical archive of closed trades.
+</p>

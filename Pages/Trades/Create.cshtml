@@ -1,0 +1,89 @@
+﻿@page
+@model OptionsTracker.Pages.Trades.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Trade</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Trade.Market" class="control-label"></label>
+                <input asp-for="Trade.Market" class="form-control" />
+                <span asp-validation-for="Trade.Market" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trade.ContractMonth" class="control-label"></label>
+                <input asp-for="Trade.ContractMonth" class="form-control" />
+                <span asp-validation-for="Trade.ContractMonth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trade.ContractType" class="control-label"></label>
+                <input asp-for="Trade.ContractType" class="form-control" />
+                <span asp-validation-for="Trade.ContractType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trade.StrikePrice" class="control-label"></label>
+                <input asp-for="Trade.StrikePrice" class="form-control" />
+                <span asp-validation-for="Trade.StrikePrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trade.ExpirationDate" class="control-label"></label>
+                <input asp-for="Trade.ExpirationDate" class="form-control" />
+                <span asp-validation-for="Trade.ExpirationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trade.EntryDate" class="control-label"></label>
+                <input asp-for="Trade.EntryDate" class="form-control" />
+                <span asp-validation-for="Trade.EntryDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trade.NbrOfContracts" class="control-label"></label>
+                <input asp-for="Trade.NbrOfContracts" class="form-control" />
+                <span asp-validation-for="Trade.NbrOfContracts" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trade.EntryPrice" class="control-label"></label>
+                <input asp-for="Trade.EntryPrice" class="form-control" />
+                <span asp-validation-for="Trade.EntryPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trade.CurrentPrice" class="control-label"></label>
+                <input asp-for="Trade.CurrentPrice" class="form-control" />
+                <span asp-validation-for="Trade.CurrentPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trade.CommissionFees" class="control-label"></label>
+                <input asp-for="Trade.CommissionFees" class="form-control" />
+                <span asp-validation-for="Trade.CommissionFees" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trade.ExitDate" class="control-label"></label>
+                <input asp-for="Trade.ExitDate" class="form-control" />
+                <span asp-validation-for="Trade.ExitDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trade.ExitPrice" class="control-label"></label>
+                <input asp-for="Trade.ExitPrice" class="form-control" />
+                <span asp-validation-for="Trade.ExitPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

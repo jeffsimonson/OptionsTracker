@@ -1,0 +1,136 @@
+﻿@page 
+@model OptionsTracker.Pages.Trades.IndexModel
+
+@{
+    ViewData["Title"] = "Options Portfolio Summary";
+}
+
+<h1>Options Portfolio Summary</h1>
+
+<p>
+    <a asp-page="Create">Add New Trade</a>
+</p>
+
+
+<form>
+    <p>
+        <select asp-for="SelectedMarket" asp-items="Model.SelectionMarketsList">
+            <option value="">All</option>
+        </select>
+        Symbol: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DisplayTradesList[0].Market)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisplayTradesList[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisplayTradesList[0].ContractMonth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisplayTradesList[0].ContractType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisplayTradesList[0].StrikePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisplayTradesList[0].ExpirationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisplayTradesList[0].EntryDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisplayTradesList[0].NbrOfContracts)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisplayTradesList[0].EntryPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisplayTradesList[0].CurrentPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisplayTradesList[0].DaysToExpiration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisplayTradesList[0].PositionValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisplayTradesList[0].PositionProfitLoss)
+            </th>
+            <th>Actions<span style="color: white">XXXXXXXXX</span></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.DisplayTradesList)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Market)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContractMonth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContractType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrikePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpirationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EntryDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NbrOfContracts)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EntryPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DaysToExpiration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PositionValue)
+            </td>
+            <td class=@item.ProfitLossClassName>
+                @Html.DisplayFor(modelItem => item.PositionProfitLoss)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="11">
+                Portfolio Totals
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.TotalPortfolioValue)
+            </td>
+            <td class=@Html.DisplayFor(model => model.TotalProfitLossClassName)>
+                @Html.DisplayFor(model => model.TotalProfitLoss)
+            </td>
+        </tr>
+    </tfoot>
+
+</table>
