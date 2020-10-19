@@ -1,5 +1,3 @@
-# optionstracker
-
 # OptionsTracker - C#/ASP.Net Core
 
 During my absence from the software development industry, I was self-employed as futures/commodities options trader. Since I was a bit short on project ideas, I decided to draw upon my knowledge and experiences as an options trader in order to create an application that would be useful for keeping track of my options trade positions.
